@@ -7,8 +7,8 @@ public class Varasto implements VarastoApi {
     private KirjanpitoApi kirjanpito;
     private HashMap<Tuote, Integer> saldot;
 
-    public Varasto(KirjanpitoApi k) {
-        kirjanpito = k;
+    public Varasto(KirjanpitoApi kirjanpito) {
+        this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }

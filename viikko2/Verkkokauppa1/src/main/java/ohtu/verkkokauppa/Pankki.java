@@ -4,8 +4,8 @@ public class Pankki implements PankkiApi {
 
     private KirjanpitoApi kirjanpito;
 
-    public Pankki(KirjanpitoApi k) {
-        kirjanpito = k;
+    public Pankki(KirjanpitoApi kirjanpito) {
+        this.kirjanpito = kirjanpito;
     }
 
     @Override
