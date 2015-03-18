@@ -1,11 +1,17 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Pankki implements PankkiApi {
 
     private KirjanpitoApi kirjanpito;
 
-    public Pankki(KirjanpitoApi k) {
-        kirjanpito = k;
+    @Autowired
+    public Pankki(KirjanpitoApi kirjanpito) {
+        this.kirjanpito = kirjanpito;
     }
 
     @Override
