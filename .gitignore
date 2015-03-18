@@ -1,3 +1,5 @@
 *.xxx
 target/*
 OhtuVarasto/target/
+*/*/target/
+
