@@ -7,7 +7,23 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">      
     
-    <context:annotation-config />
-    <context:component-scan base-package="ohtu.verkkokauppa" />  
+    <bean id="viitegeneraattori" class="ohtu.verkkokauppa.Viitegeneraattori">
+    </bean>
     
+    <bean id="kirjanpito" class="ohtu.verkkokauppa.Kirjanpito">
+    </bean>
+    
+    <bean id="varasto" class="ohtu.verkkokauppa.Varasto">
+        <property name="kirjanpito" ref="kirjanpito"/>
+    </bean>
+    
+    <bean id="pankki" class="ohtu.verkkokauppa.Pankki">
+        <property name="kirjanpito" ref="kirjanpito"/>
+    </bean>
+    
+    <bean id="kauppa" class="ohtu.verkkokauppa.Kauppa">
+        <property name="varasto" ref="varasto"/>
+        <property name="pankki" ref="pankki"/>
+        <property name="viitegeneraattori" ref="viitegeneraattori"/>
+    </bean>
 </beans>

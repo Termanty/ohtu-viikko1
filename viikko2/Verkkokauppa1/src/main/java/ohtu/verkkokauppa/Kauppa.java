@@ -8,10 +8,7 @@ public class Kauppa {
     private ViitegenApi viitegeneraattori;
     private String kaupanTili;
 
-    public Kauppa(VarastoApi v, PankkiApi p, ViitegenApi vi) {
-        varasto = v;
-        pankki = p;
-        viitegeneraattori = vi;
+    public Kauppa() {
         kaupanTili = "33333-44455";
     }
 
@@ -38,5 +35,31 @@ public class Kauppa {
         
         return pankki.tilisiirto(nimi, viite, tiliNumero, kaupanTili, summa);
     }
+
+    public ViitegenApi getViitegeneraattori() {
+        return viitegeneraattori;
+    }
+
+    public void setViitegeneraattori(ViitegenApi viitegeneraattori) {
+        this.viitegeneraattori = viitegeneraattori;
+    }
+
+    public PankkiApi getPankki() {
+        return pankki;
+    }
+
+    public void setPankki(PankkiApi pankki) {
+        this.pankki = pankki;
+    }
+
+    public VarastoApi getVarasto() {
+        return varasto;
+    }
+
+    public void setVarasto(VarastoApi varasto) {
+        this.varasto = varasto;
+    }
+    
+    
 
 }
